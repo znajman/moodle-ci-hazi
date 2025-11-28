@@ -1,5 +1,13 @@
 # tests/unit/test_calculator_unit.py
 
+import os
+import sys
+
+# add project root to sys.path so `calculator` can be imported in CI
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
 from calculator import Calculator
 
 def test_add_two_positive_numbers():
